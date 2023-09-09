@@ -65,7 +65,6 @@ export default MyComponent;
 
 <details>
 <summary><strong>what is the deferent between statefull vs stateless component ?
-
 </strong></summary>
 <p>
 
@@ -111,7 +110,333 @@ function MyComponent(props) {
     </div>
   );
 }
-
 ```
 </p>
 </details>
+<details>
+<summary><strong>
+What is Higher Order Component
+</strong></summary>
+<p>
+A higher-order component in Reactjs is a function that takes a component and returns a new component with additional props. It's a technique that allows you to reuse logic across multiple components.
+
+A higher-order component can be adjusted to fit the needs of different components, also it can be reused to enhance multiple components with the same logic.
+
+HOCs are particularly useful when you want to share logic between components that are similar but not identical. 
+They are also commonly used for implementing features like authentication, error handling, and data loading. 
+
+</p>
+</details>
+
+<details>
+<summary><strong>
+How data flow in react ?
+</strong></summary>
+<p>
+In React, data flows in a unidirectional manner, which means it follows a specific path from parent to child components. 
+</p>
+</details>
+<details>
+<summary><strong>
+What is prop drilling ?
+</strong></summary>
+<p>
+Prop drilling, also known as "prop passing" or "component chaining," is a situation in React where data is passed through multiple levels of nested components as props, even when intermediate components do not use that data themselves. This can occur when you need to send data from a high-level parent component to a deeply nested child component, and you have to pass it through multiple intermediary components in the component tree.
+
+To mitigate the issues related to prop drilling, you can consider alternative solutions:
+
+<strong>Context API:</strong> Use React's Context API to share data between components without the need for prop drilling. This is particularly useful for global state management.
+
+<strong>Redux:</strong> Implement a state management library like Redux, which allows you to store and access application-wide state without prop drilling.
+
+</p>
+</details>
+
+<details>
+<summary><strong>
+what are children props ?
+</strong></summary>
+<p>
+In React, the children prop is a special prop that allows you to pass components, elements, or content between the opening and closing tags of a custom component. It is often used to create reusable components that can encapsulate and render content or components provided by their parent components.
+
+Here's how you can use the children prop:
+```
+function ParentComponent() {
+  return (
+    <div>
+      <ChildComponent>
+        <p>This is the content provided to ChildComponent.</p>
+        <button>Click me</button>
+      </ChildComponent>
+    </div>
+  );
+}
+
+function ChildComponent(props) {
+  return (
+    <div>
+      <h2>Child Component</h2>
+      {props.children}
+    </div>
+  );
+}
+
+```
+In this example, ChildComponent is a reusable component that can wrap any content or components passed as its children. When you use it within ParentComponent, the content provided between the <ChildComponent> tags becomes the children prop of ChildComponent.
+
+</p>
+</details>
+
+
+<details>
+<summary><strong>
+
+</strong></summary>
+<p>
+
+
+</p>
+</details>
+
+
+<details>
+<summary><strong>
+
+</strong></summary>
+<p>
+
+
+</p>
+</details>
+
+
+<details>
+<summary><strong>
+
+</strong></summary>
+<p>
+
+
+</p>
+</details>
+
+
+<details>
+<summary><strong>
+
+</strong></summary>
+<p>
+
+
+</p>
+</details>
+
+
+<details>
+<summary><strong>
+
+</strong></summary>
+<p>
+
+
+</p>
+</details>
+
+
+<details>
+<summary><strong>
+
+</strong></summary>
+<p>
+
+
+</p>
+</details>
+
+
+<details>
+<summary><strong>
+
+</strong></summary>
+<p>
+
+
+</p>
+</details>
+
+
+<details>
+<summary><strong>
+
+</strong></summary>
+<p>
+
+
+</p>
+</details>
+
+
+<details>
+<summary><strong>
+
+</strong></summary>
+<p>
+
+
+</p>
+</details>
+
+
+<details>
+<summary><strong>
+
+</strong></summary>
+<p>
+
+
+</p>
+</details>
+
+
+<details>
+<summary><strong>
+
+</strong></summary>
+<p>
+
+
+</p>
+</details>
+
+
+<details>
+<summary><strong>
+
+</strong></summary>
+<p>
+
+
+</p>
+</details>
+
+
+<details>
+<summary><strong>
+
+</strong></summary>
+<p>
+
+
+</p>
+</details>
+
+
+<details>
+<summary><strong>
+
+</strong></summary>
+<p>
+
+
+</p>
+</details>
+
+
+<details>
+<summary><strong>
+
+</strong></summary>
+<p>
+
+
+</p>
+</details>
+
+
+<details>
+<summary><strong>
+
+</strong></summary>
+<p>
+
+
+</p>
+</details>
+
+
+<details>
+<summary><strong>
+
+</strong></summary>
+<p>
+
+
+</p>
+</details>
+
+
+<details>
+<summary><strong>
+
+</strong></summary>
+<p>
+
+
+</p>
+</details>
+
+
+<details>
+<summary><strong>
+
+</strong></summary>
+<p>
+
+
+</p>
+</details>
+
+
+<details>
+<summary><strong>
+
+</strong></summary>
+<p>
+
+
+</p>
+</details>
+
+
+<details>
+<summary><strong>
+
+</strong></summary>
+<p>
+
+
+</p>
+</details>
+
+
+<details>
+<summary><strong>
+
+</strong></summary>
+<p>
+
+
+</p>
+</details>
+
+
+<details>
+<summary><strong>
+
+</strong></summary>
+<p>
+
+
+</p>
+</details>
+
