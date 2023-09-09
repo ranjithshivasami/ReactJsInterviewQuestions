@@ -64,10 +64,54 @@ export default MyComponent;
 </details>
 
 <details>
-<summary><strong></strong></summary>
+<summary><strong>what is the deferent between statefull vs stateless component ?
+
+</strong></summary>
 <p>
 
+The difference between stateful and stateless is that one has state, and the other doesn’t. That means the stateful components are keeping track of changing data, while stateless components print out what is given to them via props, or they always render the same thing.
+
+Stateful component :
+
+```
+import React, { useState } from 'react';
+
+function Counter() {
+  // useState is a Hook that adds state to functional components
+  // The initial state (count) is set to 0
+  const [count, setCount] = useState(0);
+
+  // Event handler to increment the count
+  const incrementCount = () => {
+    setCount(count + 1); // Update the count state
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={incrementCount}>Increment</button>
+    </div>
+  );
+}
+
+export default Counter;
 
 
+```
+Example of a stateless functional component:
+
+
+```
+import React from 'react';
+
+function MyComponent(props) {
+  return (
+    <div>
+      <p>Hello, {props.name}!</p>
+    </div>
+  );
+}
+
+```
 </p>
 </details>
