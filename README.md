@@ -372,58 +372,71 @@ Depending on your build tool (Webpack, Create React App, etc.), you may need to 
 </p>
 </details>
 
+<details>
+<summary><strong>
+Why using className instead of class in react ?
+</strong></summary>
+<p>
+In React, you should use the className attribute instead of the class attribute when specifying CSS classes for HTML elements. This is because React follows the JavaScript naming convention for attributes and properties, and class is a reserved keyword in JavaScript.
+</p></details>
 
 <details>
 <summary><strong>
-
+How to handle error in react what is the error boundary in react ?
 </strong></summary>
 <p>
-
-
+In React, you can handle errors using Error Boundaries, which are special components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of crashing the whole application. Error Boundaries are a way to gracefully handle errors that might occur during rendering, in event handlers, or in componentDidCatch lifecycle methods.
 </p>
 </details>
 
-
 <details>
 <summary><strong>
-
+How to call API in react js?
 </strong></summary>
 <p>
-
-
+To call an API in a React.js application, you can use various methods and libraries. Here's a basic example of how to make an API request using the fetch function, a built-in JavaScript method. Additionally, I'll provide an example using the axios library, which is a popular choice for handling API requests in React.
 </p>
 </details>
-
-
 <details>
 <summary><strong>
-
+What is the limitation of react?
 </strong></summary>
 <p>
+React is a powerful and popular JavaScript library for building user interfaces, but like any technology, it has its limitations. It's important to be aware of these limitations when deciding whether React is the right choice for your project. Here are some of the limitations of React:
 
+<strong></strong>Learning Curve:</strong> React introduces concepts like components, props, state, JSX, and a virtual DOM. For developers new to React or JavaScript, there can be a steep learning curve. However, once you understand these concepts, it becomes more straightforward.
 
+<strong>Boilerplate Code:</strong> React can require a fair amount of boilerplate code, especially for setting up components, managing state, and handling side effects. While tools like Create React App help, larger applications may still require additional configuration and setup.
+
+<strong>Complex State Management:</strong> While React provides the useState hook and useReducer for managing component-level state, more complex state management across multiple components can become challenging. Libraries like Redux or Mobx are often used for such scenarios.
+
+<strong>Performance Optimization:</strong> React's virtual DOM helps optimize rendering, but inefficient component updates can still impact performance. Developers need to be mindful of how they structure their components and avoid unnecessary renders.
+
+<strong>Server-Side Rendering (SSR):</strong> While React supports server-side rendering, setting up and configuring SSR can be complex and may require additional libraries and tools.
+
+<strong>Not Opinionated About Data Fetching:</strong> React doesn't provide a built-in solution for data fetching. Developers need to choose libraries or methods for making API requests and managing data flow (e.g., Axios, fetch, GraphQL, Redux, Apollo Client).
+
+<strong>SEO Challenges:</strong> While SSR can improve SEO, single-page applications (SPAs) built with React may require additional SEO optimizations to ensure search engines can properly index the content.
+
+<strong>Lack of Built-in Routing:</strong> React itself doesn't include a built-in routing solution. Developers often use third-party libraries like React Router for handling client-side routing.
+
+<strong>Large Bundle Sizes:</strong> Depending on how it's configured and used, React applications can have large bundle sizes, which can impact initial page load times. Code splitting and lazy loading can help mitigate this issue.
+
+<strong>Ecosystem Fragmentation:</strong> React's ecosystem is extensive, which can lead to fragmentation. Developers must choose from various state management solutions, routing libraries, and other tools, which can lead to decision fatigue.
+
+<strong>Mobile Development:</strong> While React Native allows for mobile app development using React, it's a separate technology with its own learning curve and limitations. It may not cover all use cases for mobile development.
+
+<strong>Community and Maintenance:</strong> The fast pace of development in the JavaScript ecosystem means that libraries and tools can become outdated quickly. Staying up to date with React and its ecosystem can be challenging.
+
+Despite these limitations, React is widely used and has a vibrant community that actively addresses many of these challenges through open-source libraries and best practices. Many of the limitations can be mitigated or addressed with careful design, appropriate libraries, and experience. Ultimately, whether React is suitable for a particular project depends on the project's requirements and the team's familiarity with the technology.
 </p>
 </details>
-
-
 <details>
 <summary><strong>
-
+What is pure component in react?
 </strong></summary>
 <p>
-
-
-</p>
-</details>
-
-
-<details>
-<summary><strong>
-
-</strong></summary>
-<p>
-
-
+React pure components are the components that do not re-render when the value of props and state has been updated with the same values. Since these components do not cause re-rendering when the same values are passed thus they improve performance.
 </p>
 </details>
 
