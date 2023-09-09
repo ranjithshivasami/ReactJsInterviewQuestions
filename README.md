@@ -1,4 +1,4 @@
-### React Js Interview Questions
+##  React Js Interview Questions
 
 <details>
 <summary><strong>What is a Virtual DOM and Diff between realDom and VirtualDom</strong></summary>
@@ -190,55 +190,185 @@ In this example, ChildComponent is a reusable component that can wrap any conten
 
 <details>
 <summary><strong>
-
+why we used functional component ?
 </strong></summary>
 <p>
+Functional components are used in React for several reasons, and their popularity has grown significantly since the introduction of React Hooks. Here are some key reasons why you might choose to use functional components:
 
+<strong></strong>Simplicity and Conciseness:</strong> Functional components are essentially JavaScript functions, which makes them simpler and more concise compared to class components. They are easier to read and understand, especially for developers new to React.
+
+<strong>Easier to Test: </strong>Functional components are pure functions that take props as input and return JSX as output. This purity makes them easier to test because you can predict their behavior based solely on their input, which simplifies unit testing.
+
+<strong>Hooks for State and Side Effects:</strong> React Hooks, introduced in React 16.8, allow functional components to manage state, side effects, and other React features that were previously exclusive to class components. Hooks like useState, useEffect, and useContext provide powerful capabilities for functional components.
+
+<strong>Reusability and Composition:</strong> Functional components can be easily composed together. They are ideal for creating small, reusable components that can be combined to build complex UIs. This encourages a more modular and maintainable code structure.
+
+<strong>Performance:</strong> Functional components can be optimized for performance using techniques like memoization and the React.memo higher-order component. React's performance optimizations apply equally to both functional and class components.
+
+<strong>Function as Child Components (Render Props):</strong> Functional components are well-suited for implementing the "function as child" or "render props" pattern, where a component receives a function as a prop, allowing customization of behavior.
+
+<strong>Simplified Lifecycle Management:</strong> Functional components can use the useEffect hook to manage side effects and mimic the behavior of class component lifecycle methods like componentDidMount and componentDidUpdate.
+
+<strong>Easier Migration:</strong> If you're starting a new project or migrating from class components to functional components, using functional components with hooks can provide a smoother transition and allow you to leverage the latest React features.
+
+<strong>Consistency with JavaScript:</strong> Functional components align more closely with JavaScript's functional programming paradigm, making them more natural for developers who are already familiar with JavaScript.
 
 </p>
 </details>
 
+<details>
+<summary><strong>
+What is useEffet and when to use?
+</strong></summary>
+<p>
+The useEffect hook is a fundamental part of React's hooks system, and it's used for managing side effects in functional components. Side effects in React typically include actions such as data fetching, DOM manipulation, and subscribing to external data sources.
+
+Here's a basic overview of the useEffect hook and when to use it:
+<strong>Syntax:</strong>
+
+```
+import { useEffect } from 'react';
+
+useEffect(() => {
+  // Code to run after rendering or when dependencies change
+}, [dependencies]);
+
+```
+
+<strong>Parameters:</strong>
+
+* The first argument to useEffect is a function that contains the code you want to run as a side effect.
+* The second argument is an optional array of dependencies. If provided, the effect will only run when one or more of these dependencies change. If omitted, the effect will run after every render.
+<strong>When to Use useEffect:</strong>
+
+1. Data Fetching: You can use useEffect to fetch data from APIs, databases, or other external sources. You typically run the effect after the initial render and whenever relevant dependencies (e.g., query parameters) change.
+```
+useEffect(() => {
+  // Fetch data and update component state
+}, [dependencies]);
+
+```
+
+2. DOM Manipulation: When you need to interact with the DOM (e.g., adding or removing elements, changing styles), you can use useEffect to perform these actions after the component has rendered.
+```
+useEffect(() => {
+  // DOM manipulation code here
+}, [dependencies]);
+
+```
+3. Subscriptions and Event Listeners: If you need to set up event listeners or subscribe to external data sources (e.g., WebSocket connections), useEffect is a suitable place to do this. Make sure to clean up these subscriptions in the effect's cleanup function.
+
+```
+useEffect(() => {
+  // Set up event listeners or subscriptions
+  return () => {
+    // Clean up event listeners or subscriptions
+  };
+}, [dependencies]);
+
+```
+4. Performing Cleanup: When you need to perform cleanup operations when the component unmounts or before a new effect runs, you can return a cleanup function from the useEffect.
+```
+useEffect(() => {
+  // Code to run after rendering or when dependencies change
+
+  return () => {
+    // Cleanup code (e.g., clear timers, close connections)
+  };
+}, [dependencies]);
+
+```
+5. Changing Component State: You can use useEffect to modify the component's state based on certain conditions or when dependencies change. However, be cautious to avoid infinite loops by ensuring that state updates don't trigger the same effect again.
+```
+useEffect(() => {
+  if (someCondition) {
+    // Update component state
+  }
+}, [dependencies]);
+
+```
+6. Conditional Effects: You can use useEffect conditionally by placing conditions inside the effect function. This allows you to run different code based on certain conditions.
+```
+useEffect(() => {
+  if (someCondition) {
+    // Run one set of code
+  } else {
+    // Run another set of code
+  }
+}, [dependencies]);
+
+```
+
+In summary, useEffect is a versatile hook that allows you to manage various side effects in functional components. You should use it when you need to perform actions that go beyond rendering components, whether it's fetching data, interacting with the DOM, subscribing to data sources, or performing cleanup operations. The second argument, the array of dependencies, helps control when the effect should run, optimizing the performance of your component.
+</p>
+</details>
 
 <details>
 <summary><strong>
-
+What is useRefs?
 </strong></summary>
 <p>
+In React, the useRef hook is used to create and interact with a mutable ref object. A ref is a way to access and interact with the properties of a DOM element or a React component instance directly. Unlike state, changes to refs do not trigger re-renders of the component, making them suitable for managing mutable values and accessing DOM elements imperatively.
 
+Here are some common use cases for useRef:
+
+1. Accessing DOM Elements: You can use useRef to access and manipulate DOM elements directly. This is often necessary when you need to work with third-party libraries that require direct access to DOM elements or when you need to focus an input element programmatically.
+2. Preserving Values Between Renders: Unlike state variables, ref values don't cause re-renders when they change. This makes refs suitable for preserving values between renders without affecting the component's render cycle.
+3. Storing Previous Values: You can use useRef to store and access previous values of props or state, which can be useful in certain scenarios, such as comparing the previous and current values to determine if an action should be taken.
+4. Imperative DOM Manipulation: In some cases, you may need to imperatively modify DOM elements, for example, to trigger animations, scroll to a specific position, or perform other imperative actions. useRef can be used to access and manipulate DOM elements directly.
+</p>
+</details>
+
+<details>
+<summary><strong>
+What is lazy loading ?
+</strong></summary>
+<p>
+Lazy loading, also known as deferred loading, is a technique used in web development to optimize the loading of assets (typically, images, scripts, or other resources) on a webpage. The main idea behind lazy loading is to delay the loading of non-essential or off-screen content until it's needed, thereby improving page load times, reducing bandwidth usage, and providing a better user experience.
 
 </p>
 </details>
 
-
 <details>
 <summary><strong>
-
+How to implement Lazy loading in ReactRoute using ReactRouterDom?
 </strong></summary>
 <p>
 
+Lazy loading in React Router using React Router DOM involves dynamically importing components and rendering them only when the route is matched. This can significantly improve the initial loading time of your application by loading only the necessary components for the current route. To implement lazy loading in React Router, you can use dynamic imports and the React.lazy function.
+<srtong>Create Routes with Lazy Loading:</srtong>
+In your application, define your routes using React.lazy to dynamically import components. Each route should use the lazy function and Suspense for fallback rendering while the component is loading.
 
-</p>
-</details>
+```
+import React, { lazy, Suspense } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+// Import components using dynamic import (lazy loading)
+const Home = lazy(() => import('./components/Home'));
+const About = lazy(() => import('./components/About'));
+const Contact = lazy(() => import('./components/Contact'));
 
-<details>
-<summary><strong>
+function App() {
+  return (
+    <Router>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/contact" component={Contact} />
+        </Switch>
+      </Suspense>
+    </Router>
+  );
+}
 
-</strong></summary>
-<p>
+export default App;
 
+```
 
-</p>
-</details>
-
-
-<details>
-<summary><strong>
-
-</strong></summary>
-<p>
-
-
+In this example, we use dynamic imports to load the Home, About, and Contact components lazily. The Suspense component provides a fallback while the imported components are loading.
+<strong>Build Your Application:</strong>
+Depending on your build tool (Webpack, Create React App, etc.), you may need to configure it to support dynamic imports and code splitting. Create React App, for instance, supports dynamic imports out of the box.
 </p>
 </details>
 
