@@ -402,6 +402,7 @@ To call an API in a React.js application, you can use various methods and librar
 What is the limitation of react?
 </strong></summary>
 <p>
+
 React is a powerful and popular JavaScript library for building user interfaces, but like any technology, it has its limitations. It's important to be aware of these limitations when deciding whether React is the right choice for your project. Here are some of the limitations of React:
 
 <strong></strong>Learning Curve:</strong> React introduces concepts like components, props, state, JSX, and a virtual DOM. For developers new to React or JavaScript, there can be a steep learning curve. However, once you understand these concepts, it becomes more straightforward.
@@ -443,10 +444,264 @@ React pure components are the components that do not re-render when the value of
 
 <details>
 <summary><strong>
+ What is the difference between state and props?
+</strong></summary>
+<p>
+In React, both state and props are mechanisms for managing data and communication within a component-based application, but they serve different purposes and have some key differences:
 
+<strong>Props (Properties):</strong>
+
+</strong>Immutable:</strong> Props are read-only and cannot be modified by the component that receives them. They are passed from a parent component to a child component.
+
+</strong>External Data:</strong> Props are used to pass data from a parent component to a child component. They allow a parent component to communicate with its child components by providing data and configuration.
+
+</strong>Top-Down Data Flow:</strong> Data in props flows in a unidirectional (top-down) manner. Changes in props at the parent level can trigger re-renders in child components that receive those props.
+
+</strong>Pure Functions:</strong> Components that rely solely on props, without using internal state, are often referred to as "pure" or "stateless" components. They are predictable and easier to test.
+
+</strong>Initialization:</strong> Props are typically initialized in the parent component and passed down to child components. Child components cannot modify their props directly.
+
+</strong>State:</strong>
+
+</strong>Mutable:</strong> State is mutable and can be modified using the setState method within the component that owns the state. Class components have state, while functional components can use the useState hook to manage local state.
+
+</strong>Local Data:</strong> State is used for managing data that is specific to a component and doesn't need to be shared with other components. It represents the internal state of a component.
+
+</strong>Component-Specific:</strong> Each component instance has its own state. Changes to a component's state trigger re-renders of that component only, not its parent or child components.
+
+</strong>Lifecycle Methods (Class Components):</strong> State management often involves lifecycle methods like componentDidMount, componentDidUpdate, and componentWillUnmount, which allow you to perform side effects and update state.
+
+</strong>Initialization:</strong> State is typically initialized in the component's constructor or using the useState hook in functional components. It is managed and updated within the component.
+
+In summary, props are used for passing data and configuration from parent to child components and are immutable, while state is used for managing local, mutable data within a component and is specific to that component. Understanding the distinction between props and state is crucial for building React applications effectively, as it helps you manage data flow and maintain the separation of concerns between components.
+</p>
+</details>
+
+<details>
+<summary><strong>
+What are the different lifecycle methods?
 </strong></summary>
 <p>
 
+1. componentWillMount (deprecated) - this is most commonly used for App configuration in your root component.
+
+2. componentDidMount - here you want to do all the setup you couldn’t do without a DOM, and start getting all the data you need. Also if you want to set up eventListeners etc. this lifecycle hook is a good place to do that.
+
+3. componentWillReceiveProps (deprecated) - this lifecyclye acts on particular prop changes to trigger state transitions.
+
+4. shouldComponentUpdate - if you’re worried about wasted renders shouldComponentUpdate is a great place to improve performance as it allows you to prevent a rerender if component receives new prop. shouldComponentUpdate should always return a boolean and based on what this is will determine if the component is rerendered or not.
+
+5. componentWillUpdate (deprecated) - rarely used. It can be used instead of componentWillReceiveProps on a component that also has shouldComponentUpdate (but no access to previous props).
+
+6. componentDidUpdate - also commonly used to update the DOM in response to prop or state changes.
+7. componentWillUnmount - enables you can cancel any outgoing network requests, or remove all event listeners associated with the component.
+</p>
+</details>
+
+
+<details>
+<summary><strong>
+Explain React Hooks.
+</strong></summary>
+<p>
+Hooks let you use more of React’s features without having to use classes. The first hook that you will most likely encounter is useState. useState is a Hook that lets you add React state to function components. It returns an array with a getter and a setter.
+
+The syntax looks like
+```
+const [count, setCount] = React.useState(0);
+
+<button onClick={() => setCount(count + 1)}>Increase Count</button>;
+```
+
+The equivalent when using a class component would be.
+```
+this.state = {
+  count: 0,
+};
+
+<button onClick={() => this.setState({ count: this.state.count + 1 })}>
+  Increase Count
+</button>;
+
+```
+
+The next hook you will most likely encounter is useEffect. The Effect Hook lets you perform side effects in function components. By passing an empty array as the second argument to useEffect is equivalent to using componentDidMount. If you pass a value to the array it will only call the useEffect function when the value in the array updates.
+```
+useEffect(() => {
+  // do stuff when the component mounts
+}, []);
+```
+
+
+
+</p>
+</details>
+
+<details>
+<summary><strong>
+What are controlled components?
+</strong></summary>
+<p>
+In React, controlled components are a pattern used to manage and synchronize form elements, such as input fields and textarea elements, with component state. The key characteristic of a controlled component is that its value is controlled by React's state, and any changes to the input value are handled through React's event system.
+</p>
+</details>
+
+<details>
+<summary><strong>
+When rendering a list what is a key and what is it's purpose?
+</strong></summary>
+<p>
+When rendering a list of elements in React, the "key" is a special attribute that you should assign to each item in the list. The primary purpose of keys is to help React identify and keep track of individual elements in the list efficiently. Keys serve several important functions:
+
+1. <strong>Element Identification:</strong> Keys provide a unique identifier for each element within the list. React uses these keys to distinguish between elements and determine which items have been added, removed, or reordered when the list is updated.
+
+2. <strong>Efficient Updates:</strong> When the list is re-rendered due to changes in data or state, React uses keys to optimize updates. It aims to update the DOM in the most efficient way possible by minimizing unnecessary re-renders and DOM manipulations.
+
+3. <strong>Preservation of Component State:</strong> Keys help React preserve the state of components associated with list items. Without keys, React may re-render components even if their position in the list changes, potentially leading to lost component state.
+
+4. <strong>Stable Referencing:</strong> Using keys ensures that React maintains a stable reference to each element, even if the list is reordered or elements are added or removed. This is important for certain features like animations and maintaining scroll position.
+
+
+</p>
+</details>
+
+<details>
+<summary><strong>
+What is redux?
+</strong></summary>
+<p>
+Redux is an open-source JavaScript library commonly used in React applications for managing the application's state in a predictable and centralized manner. It is particularly popular for handling complex state management needs in large-scale or data-intensive web applications. Redux provides a single source of truth for the application's data and helps maintain a clear separation between state management and the UI components.
+
+Key concepts and components of Redux include:
+
+<strong>Store:</strong> The central data store in Redux that holds the application's entire state. It is a plain JavaScript object that represents the global state of the application.
+
+<strong>Actions:</strong> Actions are plain JavaScript objects that describe events or changes in the application. They have a type property that defines the action type and optional payload data to carry additional information.
+
+<strong>Reducers:</strong> Reducers are pure functions that specify how the application's state changes in response to actions. They take the current state and an action as input and return a new state based on that action. Reducers must be pure, meaning they produce the same output for the same input, and they should not have side effects.
+
+<strong>Dispatch:</strong> The dispatch function is used to dispatch (send) actions to the Redux store. It triggers the execution of reducers, resulting in updates to the state.
+
+<strong>Selectors: </strong>Selectors are functions used to extract specific pieces of data from the state. They help in efficiently accessing and computing derived data from the state.
+
+<strong>Middleware:</strong> Middleware functions provide a way to extend Redux's behavior. They can intercept and process actions before they reach the reducers, enabling features such as logging, asynchronous actions, and routing.
+
+</p>
+</details>
+
+<details>
+<summary><strong>
+What is Redux Thunk used for?
+</strong></summary>
+<p>
+
+Redux Thunk is a middleware for the Redux library that enables asynchronous actions to be dispatched in a Redux application. It allows you to write action creators that return functions instead of plain action objects. These functions can perform asynchronous operations, such as making API requests, and then dispatch plain action objects when the asynchronous work is complete. Redux Thunk is commonly used to handle side effects and asynchronous logic in Redux applications.
+
+</p>
+</details>
+
+<details>
+<summary><strong>
+How to pass data between sibling components using React router?
+</strong></summary>
+<p>
+Passing data between sibling components of React is possible using React Router useParams hook.
+
+</p>
+</details>
+
+<details>
+<summary><strong>
+What is the difference between useMemo and useCallback?
+</strong></summary>
+<p>
+In React, both useMemo and useCallback are hooks used for optimizing performance by memoizing values and functions, respectively. However, they serve slightly different purposes and are applied to different scenarios:
+
+1. useMemo:
+
+  * useMemo is primarily used for memoizing (caching) the result of a computation or value based on some dependencies. It ensures that the computed value is only recalculated when the dependencies change.
+  * It's commonly used when you want to avoid recomputing the same value in every render cycle, especially when the computation is expensive.
+
+2. useCallback:
+
+  * useCallback is used for memoizing functions, particularly event handlers or functions that are passed as props to child components. It's particularly useful when dealing with functional components and performance optimization.
+  * It returns a memoized version of the function that only changes when one of its dependencies changes.
+
+In summary:
+
+* Use useMemo when you want to memoize the result of a computation.
+* Use useCallback when you want to memoize a function, typically for passing it as a prop to child components or when defining event handlers.
+</p>
+</details>
+
+<details>
+<summary><strong>
+What are the advantages of react-router?
+</strong></summary>
+<p>
+React Router is a popular library for handling client-side routing in React applications. It provides several advantages that make it a valuable choice for managing routing within a React application:
+
+* <strong>Declarative Routing:</strong> React Router uses a declarative approach to define the routes of your application. You define your routes using components and JSX, making it easy to understand and manage the routing structure.
+
+* <strong>Nested Routing:</strong> React Router allows you to nest routes within components, which makes it straightforward to create complex layouts with multiple levels of nested views.
+
+* <stromng>Dynamic Routing:</strong> You can use route parameters to create dynamic routes. This is essential for building applications that display different content based on URL parameters or route segments.
+
+* <strong>Browser-Like Navigation:</strong> React Router provides a browser-like navigation experience with support for history management, including features like back and forward navigation, and the ability to programmatically navigate to different routes.
+
+* <strong>Route Matching and Navigation:</strong> It offers powerful route matching capabilities, allowing you to specify exact matches, partial matches, and route parameters. Navigation between routes can be done using the <Link> component, useHistory hook, or programmatically with history.push().
+
+* <strong>Code Splitting and Lazy Loading:</strong> React Router supports code splitting and lazy loading of route components. This allows you to load only the JavaScript code needed for the current route, improving the application's initial load time.
+
+* <strong>Route Guards and Redirects:</strong> You can implement route guards and redirects to control access to specific routes or to handle authentication and authorization logic.
+
+* <strong>Query Parameters:</strong> React Router supports query parameters in URLs, making it easy to pass data between routes or to implement search and filtering functionality.
+
+* <strong>Server-Side Rendering (SSR) and Static Site Generation (SSG): </strong>React Router is compatible with server-side rendering and static site generation, enabling SEO-friendly and performant server-rendered React applications.
+
+* <strong>Community and Documentation:</strong> React Router has a large and active community, along with comprehensive documentation and a wealth of tutorials and resources available online.
+
+* <strong>Pluggable:</strong> React Router is designed with extensibility in mind. You can customize its behavior and add additional functionality by using plugins and custom route components.
+
+* <strong>Compatibility:</strong> It is compatible with various routing strategies, including hash-based routing (/#/) and history-based routing (/), allowing you to choose the approach that best suits your application and deployment requirements.
+
+React Router's flexibility, ease of use, and robust feature set make it a powerful tool for handling client-side routing in React applications. Whether you're building a small single-page app or a large-scale application with complex routing needs, React Router can help you manage the navigation and routing aspects of your project effectively.
+
+</p>
+</details>
+
+<details>
+<summary><strong>
+How react defered from other js librarieas nad frame works?
+</strong></summary>
+<p>
+React is a JavaScript library for building user interfaces, and it has several distinctive features and philosophies that set it apart from other JavaScript libraries and frameworks. Here are some key ways in which React differs from other libraries and frameworks:
+
+1. **Component-Based Architecture:** React's core concept is a component-based architecture. It encourages developers to break down user interfaces into small, reusable components. This approach promotes code reusability, maintainability, and separation of concerns.
+
+2. **Virtual DOM:** React uses a virtual representation of the DOM (Virtual DOM) to efficiently update the actual DOM. When data changes, React calculates the minimum number of DOM updates needed, minimizing performance bottlenecks.
+
+3. **Unidirectional Data Flow:** React enforces a unidirectional data flow, which means that data flows in one direction—from parent components to child components. This simplifies data management and makes it easier to understand how changes propagate through the application.
+
+4. **JSX:** React introduces JSX (JavaScript XML), a syntax extension for JavaScript that allows you to write HTML-like code within JavaScript files. JSX helps define the structure of components and makes it more intuitive to work with user interfaces in code.
+
+5. **Reactivity:** React promotes a reactive programming model, where components automatically re-render when their state or props change. This declarative approach simplifies UI updates and reduces the need for manual DOM manipulation.
+
+6. **No Opinions on Data Fetching:** React itself doesn't provide a built-in solution for data fetching or state management. Instead, it can be combined with libraries and tools like Redux, Mobx, Axios, or GraphQL to manage data flow and state.
+
+7. **Server-Side Rendering (SSR):** React has strong support for server-side rendering (SSR), allowing you to render components on the server and send pre-rendered HTML to the client. This can improve initial page load times and SEO.
+
+8. **Large Ecosystem:** React has a vast ecosystem of third-party libraries and tools that extend its functionality, including routing libraries (React Router), state management solutions (Redux, Mobx), and UI component libraries (Material-UI, Ant Design).
+
+9. **React Native:** React has a sibling project called React Native, which enables you to build native mobile applications for iOS and Android using React and JavaScript. This allows for code sharing between web and mobile apps.
+
+10. **Strong Community:** React has a large and active community of developers, resulting in extensive documentation, a wide range of tutorials, and a wealth of open-source contributions.
+
+11. **Learning Curve:** While React is relatively easy to get started with, its concepts, such as components, props, and state, may require some initial learning. However, once mastered, React provides a powerful and flexible toolset.
+
+12. **Granularity:** React provides a high level of granularity, giving developers fine-grained control over the structure and behavior of their user interfaces. This can be beneficial for custom and complex UIs.
+
+It's important to note that React is not a full-stack framework like Angular or a framework with a comprehensive ecosystem like Vue.js. Instead, React is often used in conjunction with other libraries and tools to build complete web and mobile applications. The choice of React versus other libraries or frameworks depends on the specific project requirements and developer preferences.
 
 </p>
 </details>
@@ -454,132 +709,26 @@ React pure components are the components that do not re-render when the value of
 
 <details>
 <summary><strong>
-
+Why should we not update the state directly?
 </strong></summary>
 <p>
+If you try to update the state directly then it won't re-render the component.
+
+```
+//Wrong
+this.state.message = "Hello world";
+```
+
+Instead use setState() method. It schedules an update to a component's state object. When state changes, the component responds by re-rendering.
+
+```
+//Correct
+this.setState({ message: "Hello World" });
+```
+
+Note: You can directly assign to the state object either in constructor or using latest javascript's class field declaration syntax.
+
 
 
 </p>
 </details>
-
-
-<details>
-<summary><strong>
-
-</strong></summary>
-<p>
-
-
-</p>
-</details>
-
-
-<details>
-<summary><strong>
-
-</strong></summary>
-<p>
-
-
-</p>
-</details>
-
-
-<details>
-<summary><strong>
-
-</strong></summary>
-<p>
-
-
-</p>
-</details>
-
-
-<details>
-<summary><strong>
-
-</strong></summary>
-<p>
-
-
-</p>
-</details>
-
-
-<details>
-<summary><strong>
-
-</strong></summary>
-<p>
-
-
-</p>
-</details>
-
-
-<details>
-<summary><strong>
-
-</strong></summary>
-<p>
-
-
-</p>
-</details>
-
-
-<details>
-<summary><strong>
-
-</strong></summary>
-<p>
-
-
-</p>
-</details>
-
-
-<details>
-<summary><strong>
-
-</strong></summary>
-<p>
-
-
-</p>
-</details>
-
-
-<details>
-<summary><strong>
-
-</strong></summary>
-<p>
-
-
-</p>
-</details>
-
-
-<details>
-<summary><strong>
-
-</strong></summary>
-<p>
-
-
-</p>
-</details>
-
-
-<details>
-<summary><strong>
-
-</strong></summary>
-<p>
-
-
-</p>
-</details>
-
