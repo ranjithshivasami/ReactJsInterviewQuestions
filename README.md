@@ -64,7 +64,7 @@ export default MyComponent;
 </details>
 
 <details>
-<summary><strong>what is the deferent between statefull vs stateless component ?
+<summary><strong>What is the deferent between statefull vs stateless component ?
 </strong></summary>
 <p>
 
@@ -154,7 +154,7 @@ To mitigate the issues related to prop drilling, you can consider alternative so
 
 <details>
 <summary><strong>
-what are children props ?
+What are children props ?
 </strong></summary>
 <p>
 In React, the children prop is a special prop that allows you to pass components, elements, or content between the opening and closing tags of a custom component. It is often used to create reusable components that can encapsulate and render content or components provided by their parent components.
@@ -190,7 +190,7 @@ In this example, ChildComponent is a reusable component that can wrap any conten
 
 <details>
 <summary><strong>
-why we used functional component ?
+Why we used functional component ?
 </strong></summary>
 <p>
 Functional components are used in React for several reasons, and their popularity has grown significantly since the introduction of React Hooks. Here are some key reasons why you might choose to use functional components:
