@@ -742,16 +742,16 @@ TypeScript and JavaScript compared
 
 In terms of features, here are 10 significant differences between JavaScript and TypeScript:
 
-    TypeScript can be strongly typed, while JavaScript is dynamically typed only.
-    TypeScript is more readable and maintainable than JavaScript.
-    TypeScript supports abstraction through interfaces, while JavaScript does not.
-    TypeScript allows developers to annotate code with decorators, while JavaScript does not.
-    TypeScript supports the ability to modularize and organize components through the use of namespaces, which is not supported in JavaScript.
-    TypeScript is more expressive than JavaScript, through the use of syntax elements such as optional and named parameters.
-    TypeScript supports generics and a type inference feature that is not available in JavaScript.
-    TypeScript IDEs have more features, as it is easier to build plugins and tools for a statically typed language.
-    TypeScript code is easier to debug as the codebase expands, because type errors can be discovered at compilation time rather than runtime.
-    TypeScript implements additional features beyond the limited ECMAScript specification to which JavaScript complies.
+* TypeScript can be strongly typed, while JavaScript is dynamically typed only.
+* TypeScript is more readable and maintainable than JavaScript.
+* TypeScript supports abstraction through interfaces, while JavaScript does not.
+* TypeScript allows developers to annotate code with decorators, while JavaScript does not.
+* TypeScript supports the ability to modularize and organize components through the use of namespaces, which is not supported in JavaScript.
+* TypeScript is more expressive than JavaScript, through the use of syntax elements such as optional and named parameters.
+* TypeScript supports generics and a type inference feature that is not available in JavaScript.
+* TypeScript IDEs have more features, as it is easier to build plugins and tools for a statically typed language.
+* TypeScript code is easier to debug as the codebase expands, because type errors can be discovered at compilation time rather than runtime.
+* TypeScript implements additional features beyond the limited ECMAScript specification to which JavaScript complies.
 
 TypeScript makes JavaScript better
 
@@ -762,7 +762,6 @@ TypeScript provides the community with a more dynamic, full-featured and safer w
 TypeScript isn't designed to replace JavaScript. Instead, its purpose is to encourage the proliferation of JavaScript-based platforms by making it easier to write, integrate, manage and maintain code.
 
 JavaScript-driven platforms such as NodeJS on the server and ReactJS on client side continue to gain in popularity. The ability to write code in TypeScript and turn it into JavaScript is one of the reasons adoption rates for both languages continue to climb.
-
 
 </p>
 </details>
