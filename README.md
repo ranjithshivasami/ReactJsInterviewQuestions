@@ -765,3 +765,202 @@ JavaScript-driven platforms such as NodeJS on the server and ReactJS on client s
 
 </p>
 </details>
+
+
+
+<details>
+<summary><strong>
+What are Semantic Tags in HTML ?
+</strong></summary>
+<p>
+Semantic HTML tags are elements that carry meaning about the structure and content of a web page. They are used to describe the type of content contained within them, making the HTML code more meaningful and accessible. Semantic tags play a crucial role in improving the accessibility, SEO, and overall structure of a web page.
+
+Here are some common semantic HTML tags:
+
+1. `<header>`: Represents the introductory content or a container for a set of navigational links.
+
+2. `<nav>`: Represents a section of a page intended for navigation links.
+
+3. `<main>`: Represents the main content of the document.
+
+4. `<article>`: Represents a self-contained composition in a document, such as a blog post or news article.
+
+5. `<section>`: Represents a thematic grouping of content, such as chapters, or tabs in a tabbed interface.
+
+6. `<aside>`: Represents content that is tangentially related to the content around it, like sidebars or pull quotes.
+
+7. `<footer>`: Represents the footer of a document or a section, often containing copyright information or contact details.
+
+8. `<figure>` and `<figcaption>`: `<figure>` represents self-contained content, such as an image, while `<figcaption>` provides a caption for that content.
+
+Using semantic tags not only makes your HTML code more structured and meaningful but also helps search engines understand your content better. Additionally, it can improve accessibility for users who rely on assistive technologies like screen readers.
+
+</p>
+</details>
+
+<details>
+<summary><strong>
+what are controled and uncontroled conponent in react
+</strong></summary>
+<p>
+In React, controlled and uncontrolled components refer to how you manage and handle form elements (such as input fields, checkboxes, and radio buttons) and their values within your React application.
+
+1. **Controlled Components:**
+   - In a controlled component, React maintains the component's state, and the component's value is controlled by React itself.
+   - You explicitly set the component's value in the component's state, and React updates the UI to reflect the state.
+   - When the user interacts with the component (e.g., types in an input field), an event handler is used to update the state, and the component re-renders with the new value.
+   - Controlled components are typically used when you want to have more control over the form elements, such as validating input, preventing certain actions, or synchronizing multiple form elements.
+
+   Example of a controlled input element:
+   ```jsx
+   class ControlledInput extends React.Component {
+     constructor(props) {
+       super(props);
+       this.state = { value: '' };
+     }
+
+     handleChange(event) {
+       this.setState({ value: event.target.value });
+     }
+
+     render() {
+       return (
+         <input
+           type="text"
+           value={this.state.value}
+           onChange={e => this.handleChange(e)}
+         />
+       );
+     }
+   }
+   ```
+
+2. **Uncontrolled Components:**
+   - In an uncontrolled component, React does not manage the component's state, and the component's value is directly controlled by the DOM.
+   - You typically use refs to directly access the DOM element and its value.
+   - Uncontrolled components are useful when you want to integrate React with non-React code or libraries, or when you want to avoid the overhead of managing component state for every form field.
+
+   Example of an uncontrolled input element:
+   ```jsx
+   class UncontrolledInput extends React.Component {
+     constructor(props) {
+       super(props);
+       this.inputRef = React.createRef();
+     }
+
+     handleSubmit() {
+       alert('A name was submitted: ' + this.inputRef.current.value);
+     }
+
+     render() {
+       return (
+         <div>
+           <input type="text" ref={this.inputRef} />
+           <button onClick={() => this.handleSubmit()}>Submit</button>
+         </div>
+       );
+     }
+   }
+   ```
+
+In summary, the key difference is that controlled components have their values controlled by React's state, while uncontrolled components have their values controlled by the DOM itself. The choice between controlled and uncontrolled components depends on your specific use case and requirements. Controlled components are generally recommended for most React applications because they provide a more predictable and easier-to-test way of managing form elements and their values.
+</p>
+</details>
+
+<details>
+<summary><strong>
+explain react hooks
+</strong></summary>
+<p>
+React Hooks are a feature introduced in React 16.8 to allow functional components to manage state and side effects, previously only achievable with class components. Hooks enable developers to reuse stateful logic across different components without changing their component hierarchy. They also make it easier to read, write, and test stateful logic within functional components.
+
+Here are some of the most commonly used React Hooks:
+
+1. **useState:**
+   - `useState` allows functional components to manage state. It returns an array with two elements: the current state value and a function to update it.
+   - Example:
+     ```jsx
+     const [count, setCount] = useState(0);
+     ```
+
+2. **useEffect:**
+   - `useEffect` is used for side effects in functional components. It replaces lifecycle methods like `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount` in class components.
+   - Example:
+     ```jsx
+     useEffect(() => {
+       document.title = `Count: ${count}`;
+     }, [count]);
+     ```
+
+3. **useContext:**
+   - `useContext` allows components to access values from the nearest `Context` provider in the component tree.
+   - Example:
+     ```jsx
+     const user = useContext(UserContext);
+     ```
+
+4. **useReducer:**
+   - `useReducer` is an alternative to `useState` for managing more complex state logic. It is often used when the state transitions depend on the previous state.
+   - Example:
+     ```jsx
+     const [state, dispatch] = useReducer(reducer, initialState);
+     ```
+
+5. **useRef:**
+   - `useRef` creates a mutable ref object that can hold a reference to a DOM element or any mutable value. It is often used for accessing and manipulating DOM elements directly.
+   - Example:
+     ```jsx
+     const myRef = useRef();
+     ```
+
+6. **Custom Hooks:**
+   - Developers can create custom hooks to encapsulate reusable stateful logic. Custom hooks should start with the word "use" by convention.
+   - Example:
+     ```jsx
+     function useLocalStorage(key, initialValue) {
+       // Custom hook logic
+     }
+     ```
+
+React Hooks provide several advantages:
+
+- **Improved Code Reusability:** Hooks allow you to extract and reuse stateful logic across components, reducing code duplication.
+- **Simplified Component Logic:** Functional components using Hooks are often more concise and easier to read than equivalent class components.
+- **Better Testability:** Isolating and testing logic within custom hooks is straightforward, enhancing the testability of your application.
+
+While React Hooks offer many benefits, it's important to note that they don't replace class components entirely. Class components are still valid and necessary in some cases, particularly when working with legacy codebases or integrating with certain third-party libraries. However, functional components with Hooks have become the preferred choice for most new React applications due to their simplicity and flexibility.
+
+</p>
+</details>
+
+<details>
+<summary><strong>
+
+</strong></summary>
+<p>
+
+
+</p>
+</details>
+
+<details>
+<summary><strong>
+
+</strong></summary>
+<p>
+
+
+</p>
+</details>
+
+<details>
+<summary><strong>
+
+</strong></summary>
+<p>
+
+
+</p>
+</details>
+
+
