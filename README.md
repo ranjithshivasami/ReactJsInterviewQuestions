@@ -1470,27 +1470,6 @@ In React projects, you can use a variety of tools and libraries to streamline th
 </p>
 </details>
 
-<details>
-<summary><strong>
+https://github.com/ranjithshivasami/TypeScriptInterviewQuestions
 
-</strong></summary>
-<p>
-
-</p>
-</details>
-<details>
-<summary><strong>
-
-</strong></summary>
-<p>
-
-</p>
-</details>
-<details>
-<summary><strong>
-
-</strong></summary>
-<p>
-
-</p>
-</details>
+https://github.com/ranjithshivasami/SDLC-interview-Questions
