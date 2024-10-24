@@ -1473,3 +1473,105 @@ In React projects, you can use a variety of tools and libraries to streamline th
 https://github.com/ranjithshivasami/TypeScriptInterviewQuestions
 
 https://github.com/ranjithshivasami/SDLC-interview-Questions
+
+
+## MongoDB
+### Intermediate-Level Questions:
+1. **What is the difference between `find()` and `findOne()` in MongoDB?**
+   - Explain how these queries differ in terms of use cases and performance.
+
+2. **How does MongoDB handle indexing, and what are the types of indexes you can create?**
+   - Discuss the different types of indexes (e.g., single field, compound, text, geospatial) and when each is appropriate.
+
+3. **What is a replica set in MongoDB, and how does it contribute to high availability?**
+   - Explain how replica sets work, their components (primary, secondary, and arbiter), and failover mechanisms.
+
+4. **What is the Aggregation Framework in MongoDB, and how does it differ from MapReduce?**
+   - Discuss the use of aggregation pipelines and stages like `$match`, `$group`, `$project`, and how they are optimized compared to MapReduce.
+
+5. **How does MongoDB ensure data consistency in sharded clusters?**
+   - Explain the architecture of sharding, and how MongoDB ensures read/write consistency across shards.
+
+### Advanced-Level Questions:
+6. **How does MongoDB handle transactions, and what are the limitations compared to relational databases?**
+   - Discuss MongoDB's multi-document ACID transactions, when they should be used, and their impact on performance.
+
+7. **Explain the difference between horizontal and vertical scaling in MongoDB and the challenges with each.**
+   - Talk about sharding (horizontal scaling) and increasing the power of a single node (vertical scaling) and their respective trade-offs.
+
+8. **How can you optimize MongoDB performance for large-scale read and write operations?**
+   - Discuss techniques like proper indexing, write concerns, read preferences, replication tuning, and sharding strategies.
+
+9. **What is the WiredTiger storage engine, and how does it differ from MongoDB's previous storage engine?**
+   - Explain the benefits of WiredTiger in terms of concurrency control, compression, and cache management, and how it improves performance over the MMAPv1 engine.
+
+10. **How does MongoDB handle security, and what are the best practices for securing a MongoDB database?**
+   - Discuss authentication mechanisms (e.g., SCRAM, LDAP), role-based access control (RBAC), encryption (at rest and in transit), and network security measures.
+
+Here are 10 intermediate to advanced-level JavaScript interview questions that can help you assess a candidate's skills:
+
+
+## JavaScript
+
+### Intermediate Level Questions
+
+1. **Explain Prototypal Inheritance.**
+   - How does prototypal inheritance differ from classical inheritance, and how can you implement it in JavaScript?
+
+2. **What are Closures?**
+   - Can you provide an example of a closure and explain how it can be used to create private variables?
+
+3. **What is the Event Loop?**
+   - Describe how the event loop works in JavaScript, including the roles of the call stack, callback queue, and event queue.
+
+4. **What are Promises, and how do they work?**
+   - Explain the Promise API, including `then`, `catch`, and `finally`, and how it handles asynchronous operations.
+
+### Advanced Level Questions
+
+5. **What are JavaScript Decorators?**
+   - Explain what decorators are and how they can be used in JavaScript. Provide an example of a function decorator.
+
+6. **Explain the concept of 'this' in JavaScript.**
+   - How does the value of `this` change in different contexts (global, function, object, class)? Provide examples.
+
+7. **What is a Service Worker?**
+   - Describe what service workers are, how they work, and their role in creating Progressive Web Apps (PWAs).
+
+8. **What is the difference between `let`, `const`, and `var`?**
+   - Explain the scope, hoisting, and redeclaration behaviors of each keyword.
+
+9. **What are Generators in JavaScript?**
+   - Define generators, how they differ from regular functions, and provide an example of how to use them.
+
+10. **Explain the concept of Memoization.**
+    - What is memoization, and how can it be implemented in JavaScript to optimize performance? Provide a simple example.
+
+
+
+## Express.js
+
+### Intermediate Level
+
+1. **Middleware in Express.js**: What is middleware in Express.js, and how can you create your own custom middleware? Provide an example.
+
+2. **Error Handling**: How does error handling work in Express.js? Can you demonstrate how to create a centralized error handling middleware?
+
+3. **Routing**: Explain the difference between route parameters and query parameters in Express.js. Provide examples of when you would use each.
+
+4. **Session Management**: How do you implement session management in an Express.js application? What packages would you use, and how do you ensure security?
+
+5. **RESTful APIs**: What are RESTful APIs, and how do you create a RESTful API using Express.js? Describe the role of HTTP methods in your implementation.
+
+### Advanced Level
+
+6. **Asynchronous Programming**: How do you handle asynchronous operations in Express.js, especially when dealing with database calls? Discuss the use of Promises and async/await.
+
+7. **Security Best Practices**: What are some security best practices when building an Express.js application? Discuss topics like input validation, sanitization, and preventing common vulnerabilities (e.g., XSS, CSRF).
+
+8. **Performance Optimization**: How can you optimize the performance of an Express.js application? Discuss strategies like caching, load balancing, and clustering.
+
+9. **Deployment Strategies**: What are the best practices for deploying an Express.js application in a production environment? Discuss considerations for server configuration, environment variables, and logging.
+
+10. **Testing Express Applications**: How do you test an Express.js application? Discuss the tools and frameworks you would use and provide examples of unit tests and integration tests.
+
